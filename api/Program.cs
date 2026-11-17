@@ -1,3 +1,5 @@
+using api.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+//Registers our won classes for DI,
+
+builder.Services.AddScoped<IMathServices, MathServices>();
 
 //What is CORS
 //CORS stands for Cross-Origin Resource Sharing
